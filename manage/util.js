@@ -64,7 +64,8 @@ window.Util = {
         Util.doFetch(Config.serviceBasicUrl + 'api/auth/health')
             .catch(err => window.location.href = 'login.html');
     },
-    doFetch(url, options = {}) {
+    doFetch(url, options) {
+        options = options || {};
         let handleErrors = function (response) {
             if (!response.ok) {
                 // throw Error(response.statusText);
