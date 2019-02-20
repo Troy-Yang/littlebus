@@ -4,7 +4,7 @@ document.querySelector('#menu-bar ul').addEventListener('click', function (evt) 
         while (node.nodeName !== 'LI') {
             node = node.parentNode;
         }
-        document.querySelectorAll('#menu-bar ul>li>a').forEach(node => node.classList.remove('active'));
+        Array.prototype.slice.call(document.querySelectorAll('#menu-bar ul>li>a')).forEach(node => node.classList.remove('active'));
         node.children[0].classList.add('active');
 
         let command = node.children[0].dataset && node.children[0].dataset.command;

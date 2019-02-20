@@ -82,20 +82,18 @@ window.Util = {
             };
         }
         $('#loading').show();
+        options.url = url;
         return new Promise((resolvd, reject) => {
-            fetch(url, options)
+            axios(options)
                 .then(response => {
                     $('#loading').hide();
-                    if (!response.ok) { throw response }
-                    return response.json();  //we only get here if there is no error
+                    if (response.status!==200) { throw response }
+                    return response.data;  //we only get here if there is no error
                 })
                 .then(resolvd)
                 .catch(err => {
                     $('#loading').hide();
-                    if (err.status === 401 || err.status === 500) {
-                        reject(err);
-                    }
-                    err.json().then(reject);
+                     reject(err.response.data);
                 });
         })
     }
