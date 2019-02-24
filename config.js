@@ -1,5 +1,5 @@
 let Config = {
-    HomeDomain: 'https://littlebus.red/class/',
+    HomeDomain: 'https://littlebus.red/',
     // // Jason's Prod
     serviceBasicUrl: 'https://akhs7hdl61.execute-api.ap-northeast-1.amazonaws.com/prod/'
     // // Jason's Dev
