@@ -66,13 +66,6 @@ window.Util = {
     },
     doFetch(url, options) {
         options = options || {};
-        let handleErrors = function (response) {
-            if (!response.ok) {
-                // throw Error(response.statusText);
-                throw response
-            }
-            return response;
-        }
         if (options.headers) {
             options.headers.Authorization = window.localStorage.getItem('authorization');
         }
