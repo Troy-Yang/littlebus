@@ -201,9 +201,7 @@
 
         Util.doFetch(roomServiceAPI, {
             method: 'POST', // or 'PUT'
-            body: JSON.stringify({
-                room
-            }),
+            data: { room },
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -212,10 +210,10 @@
                 $('#new-room').modal('hide');
                 Util.doFetch(roomServiceAPI + '/' + room + '/generateToken', {
                     method: 'POST',
-                    body: JSON.stringify({
+                    data: {
                         user: userName,
                         expireTime
-                    }),
+                    },
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -303,10 +301,10 @@
         }
         Util.doFetch(roomServiceAPI + '/' + room + '/generateToken', {
             method: 'POST',
-            body: JSON.stringify({
+            data: {
                 user: userName,
                 expireTime
-            }),
+            },
             headers: {
                 'Content-Type': 'application/json'
             }

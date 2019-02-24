@@ -176,11 +176,11 @@
         }
         Util.doFetch(userServiceAPI, {
                 method: 'POST', // or 'PUT'
-                body: JSON.stringify({
+                data: {
                     username,
                     password,
                     userRole
-                }),
+                },
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -208,13 +208,13 @@
         }
         Util.doFetch(userServiceAPI + '/' + username, {
                 method: 'PUT',
-                body: JSON.stringify({
+                data: {
                     createtime: createtime,
                     password: password,
                     email: email || '',
                     userRole: userRole,
                     phone: phone || ''
-                }),
+                },
                 headers: {
                     'Content-Type': 'application/json'
                 }
