@@ -34,6 +34,7 @@ window.Util = {
 
         $('#' + currentContentId + ' table tbody').html('');
         $('#' + currentContentId + ' table tbody').html(contentTemp);
+        $('#' + currentContentId + ' table').DataTable();
     },
     getCurrentTrColumnValue: function (currentTrEl, columnName) {
         var parentEl = currentTrEl.parentNode;
