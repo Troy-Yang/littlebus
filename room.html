@@ -87,6 +87,9 @@
 
         <button type="button" name="archive" id="startArchiveBtn" ng-if="isAdmin && !p2p && connected" ng-class="{green: !archiving, red: archiving}"
             class="icon-left ion-ios7-recording" ng-click="toggleArchiving()" title="Record">Record</button>
+        
+        <button type="button" name="broadcasting" ng-if="isAdmin && !p2p && connected" ng-class="{green: !broadcasting, red: broadcasting}"
+            class="icon-left ion-share" ng-click="toggleBroadcasting()" title="Broadcast">Broadcast</button>
 
         <button type="button" name="muteCamera" mute-publisher ng-if="publishing" ng-class="{green: mutedVideo, red: !mutedVideo}"
             publisher-id="facePublisher" class="icon-left ion ion-person">Camera</button>
