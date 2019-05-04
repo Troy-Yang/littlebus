@@ -24,10 +24,10 @@ var dp = new DPlayer({
             }],
         defaultQuality: 0,
     },
-    danmaku: {
-        id: 'demo',
-        api: 'http://littlebus.troyyangdev.cn:1207/'
-    }
+    // danmaku: {
+    //     id: 'demo',
+    //     api: 'http://littlebus.troyyangdev.cn:1207/'
+    // }
 });
 
 dp.on('error', function (e) {
