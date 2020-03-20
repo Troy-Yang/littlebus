@@ -41,20 +41,12 @@ var setEventListeners = function (session) {
 };
 
 var getViewerToken = function (room) {
+  var defer = $.Deferred();
   var url = Config.serviceBasicUrl + 'api/guest/room/' + room;
-  return new Promise((resolvd, reject) => {
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then(resolvd)
-      .catch((err) => {
-        if (err.status === 401 || err.status === 500) {
-          reject(err);
-        }
-        err.json().then(reject);
-      });
-  });
+  $.get(url)
+  .done(defer.resolve)
+  .fail(defer.reject);
+  return defer;
 }
 
 var updateBanner = function (status) {

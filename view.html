@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Myenglishtutor class view</title>
-  <link rel="stylesheet" href="./manage/dist/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./manage/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   <script src="https://static.opentok.com/v2/js/opentok.min.js" type="text/javascript" defer></script>
   <style type="text/css">
     .main-container {
@@ -77,8 +77,8 @@
     </div>
   </div>
 </body>
-<script src="./manage/dist/js/jquery.min.js"></script>
-<script src="./manage/dist/js/bootstrap.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <script src="./view.js"></script>
 <script src="./config.js"></script>
 <script>
@@ -94,7 +94,7 @@
   $(function () {
     var room = getQueryVariable('room');
     getViewerToken(room)
-      .then((credentials) => {
+      .done(function(credentials){
         var props = { connectionEventsSuppressed: true };
         var session = OT.initSession(credentials.apiKey, credentials.sessionId, props);
 
@@ -107,8 +107,8 @@
           }
         });
       })
-      .catch((err) => {
-        $('#bannerText').html('Error:' + err.message);
+      .fail(function(err) {
+        $('#bannerText').html('Error:' + err.responseJSON.message);
       });
   });
 
