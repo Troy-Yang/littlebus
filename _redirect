@@ -1,2 +1,2 @@
 # Redirect with a 301
-/view.html?room=show  /view/
+/view.html      /view/    301
